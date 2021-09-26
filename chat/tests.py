@@ -51,7 +51,6 @@ class ChatTests(ChannelsLiveServerTestCase):
             self._enter_chat_room("room_2")
 
             self._switch_to_window(0)
-            self._post_message('hello')
             self._post_message("hello")
             WebDriverWait(self.driver, 2).until(
                 lambda _: "hello" in self._chat_log_value,
