@@ -13,9 +13,10 @@ class ChatTests(ChannelsLiveServerTestCase):
         try:
             # NOTE: Requires "chromedriver" binary to be installed in $PATH
             cls.driver = webdriver.Chrome()
-        except Exception as _:
+        except Exception as E:
             super().tearDownClass()
             raise
+            print(E)
 
     @classmethod
     def tearDownClass(cls):
